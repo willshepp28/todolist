@@ -1,0 +1,17 @@
+body {
+    background: #ccc;
+}
+
+li {
+    list-style-type: none;
+    padding-left: 8px;
+}
+
+.checking {
+      display: flex;
+}
+
+.cross-out {
+    text-decoration: line-through;
+  
+}

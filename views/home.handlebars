@@ -1,0 +1,41 @@
+
+
+<div class="container">
+
+{{!-- Start of form --}}
+<form method="POST" action="/">
+    <input type="text" name="todo" placeholder="Add a todo">
+    <button type="submit">Add todo</button>
+</form>
+
+
+
+
+
+{{!-- Start of get Done --}}
+<div class="get-done">
+    <h1>Todo</h1>
+    <ul>
+        {{#each todos}}
+    <div class="checking">
+        <input type="checkbox" id="checkbox">
+        <li>{{this}}</li>
+
+    </div>
+        {{/each}}
+    </ul>
+</div>
+
+
+
+
+{{!-- Start of completed --}}
+<div class="completed">
+    <h1>Completed Tasks</h1>
+    <ul id="done">
+
+    </ul>
+
+</div>
+
+</div>
