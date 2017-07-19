@@ -1,3 +1,4 @@
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 // const $ = require('jquery');
 // const axios = require('axios');
 
@@ -12,7 +13,8 @@ var checkingLi = document.querySelectorAll('.checking li');
 var formcheck = document.querySelectorAll('.checking .form-edit');
 var btnEdit = document.querySelectorAll('.btn-edit');
 var a = document.createElement('LI');
-
+console.log(btnEdit);
+console.log(formcheck);
 
 for (let i = 0; i < li.length; i++) {
 
@@ -53,7 +55,12 @@ for (let i = 0; i < li.length; i++) {
 
 
 
-// var
+var deleteTodo = function(itemId){
+axios.delete('/completed/'+ itemId).then(function(res){
+    console.log(res);
+})
+}
+
 // // delete
 // axios.delete('/completed/:id', {
 //     params: {
@@ -72,4 +79,4 @@ for (let i = 0; i < li.length; i++) {
 
 
 
-
+},{}]},{},[1]);

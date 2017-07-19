@@ -1,41 +1,64 @@
-
-
 <div class="container">
 
-{{!-- Start of form --}}
-<form method="POST" action="/">
-    <input type="text" name="todo" placeholder="Add a todo">
-    <button type="submit">Add todo</button>
-</form>
+    {{!-- Start of form --}}
+    <form method="POST" action="/" class="form-input">
+        <input type="text" name="todo" placeholder="Add a todo">
+        <button type="submit">Add todo</button>
+    </form>
 
 
 
+<div class="formholder">
+
+    {{!-- Start of get Done --}}
+    <div class="get-done">
+        <h1>Todo</h1>
+        <ul>
+            {{#each todosFalse}}
+          
+            <div class="checking">
+
+                <form action="completed/{{id}}" method="POST">
+                    <button type="submit" class="redgradient">Mark complete</button>
+                </form>
 
 
-{{!-- Start of get Done --}}
-<div class="get-done">
-    <h1>Todo</h1>
-    <ul>
-        {{#each todos}}
-    <div class="checking">
-        <input type="checkbox" id="checkbox">
-        <li>{{this}}</li>
+                <li class="name greycolor">{{name}}</li>
 
+
+                <form action="/edit/{{id}}" method="POST" class="remove form-edit">
+                    <input type="text" name="edit">
+                    <button type="submit">Send Edit</button>
+                </form>
+
+                
+                    <button type="submit" class="edit btn-edit">Edit</button>
+                
+
+            </div>
+            {{/each}}
+        </ul>
     </div>
-        {{/each}}
-    </ul>
+
+
+
+
+    {{!-- Start of completed --}}
+
+    <div class="completed">
+        <h1>Completed Tasks</h1>
+    {{#each todosTrue}}
+
+  
+        <ul id="done">
+            
+             <div class="checking">
+             <li class="name greycolor">{{name}}</li>
+               </div>
+              {{/each}}
+        </ul>
+    </div>
+  
+
 </div>
-
-
-
-
-{{!-- Start of completed --}}
-<div class="completed">
-    <h1>Completed Tasks</h1>
-    <ul id="done">
-
-    </ul>
-
-</div>
-
 </div>

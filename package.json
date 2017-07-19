@@ -4,13 +4,25 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "build a todo list"
+    "watch": "watchify public/script.js -o public/bundle.js -v",
+    "build": "browserify public/script.js -o public/bundle.js",
+    "start": "npm run watch & nodemon app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
-    "express-handlebars": "^3.0.0"
+    "express-handlebars": "^3.0.0",
+    "jquery": "^3.2.1",
+    "method-override": "^2.3.9",
+    "pg": "^6.4.1",
+    "sequelize": "^4.3.2"
+  },
+  "devDependencies": {
+    "browserify": "^14.4.0",
+    "nodemon": "^1.11.0",
+    "watchify": "^3.9.0"
   }
 }
